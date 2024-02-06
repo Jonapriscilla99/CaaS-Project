@@ -3,19 +3,19 @@
 Setting up a Jenkins pipeline to automate the deployment of an EKS (Elastic Kubernetes Service) cluster involves creating a scripted pipeline & configure the pipleine in Jenkins that performs the necessary steps to deploy the EKS cluster using AWS CDK (Cloud Development Kit).
 Let's break down the process.
 # Prerequisites
-1. # EC2 Instance 
-   - Made an T2 medium EC2 instance for deployment of cdk script.
-2. # Necessary Installations: 
+1. # EC2 Instance & Necessary Installations:
+   - Launched a T2 medium EC2 instance for deployment of eks cluster.
    - Installed AWS cli & configure the AWS with credentials. 
+   - Installed CDK for the cdk script.
    - Installed docker,pulled jenkins image from docker hub inside docker.
-3. # Install and Configure Jenkins:
+2. # Install and Configure Jenkins:
    - Run Jenkins container on a server or a virtual machine. You can follow the installation instructions provided by Jenkins for your specific operating system.
    - Start the Jenkins service. After starting, Jenkins will be accessible through a web browser on port 8080 by default.
    - Access Jenkins through a web browser and follow the initial setup instructions, including obtaining the initial administrator password.
    - Configure the jenkins console with git & AWS plugins & let installed the necessary plugins by itself.
    - Inside manage jenkins>credientials>global, insert github & AWS credentials.
    - Mentioned the IAM role where the eks cluster would deploy by giving the necessary permissions.
-   # Install and prepare github Repository:
+3. # Install and prepare github Repository:
    - Made up the git repository named Caas project
    - Created a webhook to access external services & notify them when events happen in github.
    - Provide the jenkins URL to Webhook payload. 
@@ -31,6 +31,6 @@ Let's break down the process.
    - Apply & Save the changes.
 5. # Upload the cdk script:
    - Upload the code on the github.
-   # Run the pipeline job:
+6. # Run the pipeline job:
    - run the pipeline job from jenkins server by simply click on 'build' option.
    - checkout & test the code from the github in jenkins.
