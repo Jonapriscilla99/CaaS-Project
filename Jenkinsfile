@@ -11,7 +11,7 @@ pipeline {
         stage('Build & Deploy EKS Cluster') {
             steps {
                 script {
-                    sh 'cdkEKStest/cdk_ek_stest/cdk_ek_stest_stack.py'
+                    sh 'AWSCaaSProject/aws_caa_s_project/aws_caa_s_project_stack.py'
                 }
             }
         }
